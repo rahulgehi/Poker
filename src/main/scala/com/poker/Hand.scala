@@ -13,6 +13,7 @@ class Hand(val rankCount:Map[Int, Int], val suiteCount:Map[Suite.Value, Int]){
     if (isFlush) return "flush"
     if (isStraight) return "straight"
     if (isThreeOfKind) return  "three-of-a-kind"
+    if (isTwoOfPair) return "two-of-pair"
     if (isPair) return "pair"
     "high-card"
   }
@@ -36,7 +37,6 @@ class Hand(val rankCount:Map[Int, Int], val suiteCount:Map[Suite.Value, Int]){
     false
   }
   def isThreeOfKind(): Boolean = {
-    println("5")
     rankCount.exists(x=> x._2 == 3)
   }
   def isTwoOfPair(): Boolean = {
